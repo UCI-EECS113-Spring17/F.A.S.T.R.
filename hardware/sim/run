@@ -1,0 +1,6 @@
+
+
+vlog -suppress 2263 -64 -sv -f $design/rtl.cfg +define+sim
+vlog -suppress 2263 -64 -sv -f $verif/tb.cfg -work work +define+sim
+vopt -64 tb_top -o tb_top_opt +acc -work work
+vsim -64 -c tb_top_opt  -do sim.do +notimingchecks +define+sim
